@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -12,6 +13,34 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         return view('posts/show', compact('post'));
+    }
+
+    public function search()
+    {
+        $keyword = request()->input('keyword');
+        $query = Post::query();
+        $query_user = User::query();
+        $query_profile = Profile::query();
+
+        if(!empty($keyword)) {
+            $query->where('message', 'LIKE', "%{$keyword}%");
+        }
+
+        if(!empty($keyword)) {
+            $query_user->where('name','LIKE', "%{$keyword}%");
+        }
+
+        if(!empty($keyword)) {
+            $query_profile->where('com_name', 'LIKE', "%{$keyword}%")
+                            ->where('occupation', 'LIKE', "%{$keyword}%")
+                            ->where('username', 'LIKE', "%{$keyword}%")
+                            ->where('username_sm', 'LIKE', "%{$keyword}%");
+        }
+
+        $posts = $query->get();
+        $users = $query_user->get();
+        $profiles = $query_profile->get();
+        return view('posts/search', compact('keyword', 'query', 'posts', 'users', 'profiles'));
     }
 
     public function __construct()

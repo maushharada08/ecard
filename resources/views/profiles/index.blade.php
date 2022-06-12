@@ -124,9 +124,12 @@
                     <a href="/profile/{{ $user->id }}/edit" class=""><button
                             class="btn btn-outline-secondary rounded-pill">名刺を編集する</button></a>
                 @endcan
+                @cannot('update', $user->profile)
                 <div>
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                 </div>
+                @endcannot
+
             </div>
 
             <div>

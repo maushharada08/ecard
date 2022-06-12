@@ -95,10 +95,10 @@
         <div class="container">
             <div class="d-flex justify-content-between py-3 px-5">
                 <div><a href="/" class="text-dark"><i class="fa-solid fa-house fs-3"></i></a></div>
-                <div><a href="" class="text-dark"><i class="fa-solid fa-magnifying-glass fs-3"></i></a></div>
+                <div><a href="/search" class="text-dark"><i class="fa-solid fa-magnifying-glass fs-3"></i></a></div>
                 <div><a href="/p/create" class="text-dark"><i class="fa-solid fa-circle-plus fs-3"></i></a></div>
                 <div><a href="" class="text-dark"><i class="fa-solid fa-bell fs-3"></i></a></div>
-                <div><a href="/message" class="text-dark"><i class="fa-solid fa-message fs-3"></i></a></div>
+                <div><a href="" class="text-dark"><i class="fa-solid fa-message fs-3"></i></a></div>
             </div>
 
         </div>
@@ -110,6 +110,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/script.js" defer></script>
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.js" defer></script>
+
 
 </body>
 

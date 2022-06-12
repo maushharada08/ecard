@@ -32,6 +32,7 @@ Route::patch('/profile/{user}', [ProfilesController::class, 'update']);
 Route::get('/profile/{user}', [ProfilesController::class, 'index']);
 
 Route::get('/p/create', [PostsController::class, 'create']);
+Route::get('/search', [PostsController::class, 'search']);
 Route::get('/p/{post}', [PostsController::class, 'show']);
 Route::post('/p', [PostsController::class, 'store']);
 Route::get('/', [PostsController::class, 'index']);
